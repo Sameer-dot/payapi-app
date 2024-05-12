@@ -1,7 +1,19 @@
-import { Inter } from "next/font/google";
+import { DM_Serif_Display, Public_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const dmSerifDisplay = DM_Serif_Display({
+  weight: ["400"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variabe: "--font-dm-serif",
+});
+
+const publicSans = Public_Sans({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variabe: "--font-public-sans",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={dmSerifDisplay.className}>{children}</body>
     </html>
   );
 }
